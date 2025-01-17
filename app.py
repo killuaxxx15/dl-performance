@@ -5,6 +5,6 @@ import pandas as pd
 # Initialize connection to Google Sheets
 conn = st.connection('gsheets', type=GSheetsConnection)
 
-data = conn.read(worksheet='getquin', ttl=5)
+data = conn.read(worksheet='getquin', ttl='5')
 
 st.dataframe(data)
