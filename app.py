@@ -17,17 +17,35 @@ def load_gsheet_data():
     data = conn.read(worksheet='getquin', ttl=5)
     return data
 
-# Function to convert URLs (or text) in a column to clickable links
-def make_clickable(url):
-    return f'<a href="{url}" target="_blank">{url}</a>'
+def format_performance(row):
+    """
+    If the 'Port' column is 'CASH', format the 'Performance' value as a number
+    with thousands separator and 2 decimals.
+    Otherwise, convert it to a clickable link.
+    """
+    port_value = row.get('Port', None)           # Safely fetch the 'Port' column
+    performance_value = row.get('Performance', None)
+    
+    # Check if performance_value is numeric or string:
+    # (Assuming 'Performance' is numeric if Port == 'CASH')
+    if port_value == 'CASH':
+        # Safely convert to float and format with thousands separator, 2 decimals
+        try:
+            numeric_val = float(performance_value)
+            return f"{numeric_val:,.2f}"
+        except:
+            # If conversion fails, return the raw value
+            return performance_value 
+    else:
+        # Make it a clickable link
+        return f'<a href="{performance_value}" target="_blank">{performance_value}</a>'
 
 # Load the data from your Google Sheet
 df = load_gsheet_data()
 
-# OPTIONAL: If you need to transform a specific column into clickable links,
-# uncomment and adjust the column name below. 
-# For example, if your sheet has a column named 'Performance':
-df['Performance'] = df['Performance'].apply(make_clickable)
+# Apply conditional formatting to the 'Performance' column
+if 'Port' in df.columns and 'Performance' in df.columns:
+    df['Performance'] = df.apply(format_performance, axis=1)
 
 # Create custom CSS for left alignment and general styling
 custom_css = """
