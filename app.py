@@ -4,6 +4,6 @@ from streamlit_gsheets import GSheetsConnection
 # Initialize connection to Google Sheets
 conn = st.connection('gsheets', type=GSheetsConnection)
 
-data = conn.read(worksheet='Sheet1', ttl=5)
+data = conn.read(worksheet='getquin', ttl=5)
 st.dataframe(data)
 
