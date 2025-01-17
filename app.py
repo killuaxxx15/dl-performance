@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 try:
     # Attempt to read the worksheet
-    data = conn.read(worksheet='getquin', ttl=5)
+    data = conn.read(worksheet='Sheet1', ttl=5)
     st.dataframe(data)
 except Exception as e:
     st.error(f"An error occurred: {e}")
