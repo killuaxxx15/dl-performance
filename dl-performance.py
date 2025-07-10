@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Set Streamlit page configuration
-st.set_page_config(page_title='Portfolio', page_icon=':bar_chart:')
+st.set_page_config(page_title='Portfolio Performance', page_icon=':bar_chart:')
 
 # Display header for the dashboard
 st.header('Portfolio Performance')
