@@ -1,1 +1,1 @@
-web: streamlit run dl-etf-dashboard.py
+web: streamlit run dl-performance.py
