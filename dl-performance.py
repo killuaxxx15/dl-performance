@@ -7,7 +7,7 @@ st.set_page_config(page_title='Portfolio', page_icon=':bar_chart:')
 st.header('Portfolio Performance')
 
 # Display the last update date
-st.markdown('##### Updated: 10/07/2025')
+st.markdown('##### Updated: 12/07/2025')
 
 portfolios = ["TAA_AlvaroSleeve", "TAA_1", "TAA_Aggregate"]
 
