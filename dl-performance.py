@@ -9,7 +9,7 @@ st.header('Portfolio Performance (to be updated)')
 # Display the last update date
 st.markdown('##### Updated: 12/07/2025')
 
-portfolios = ["TAA_AlvaroSleeve", "TAA_1", "TAA_Aggregate"]
+portfolios = ["TAA_AlvaroSleeve", "TAA_1"]
 
 selected_portfolio = st.selectbox('Select Portfolio', portfolios, index=0)
 
@@ -22,5 +22,9 @@ st.image(f'fig3_{selected_portfolio}.png', use_container_width=True)
 
 st.subheader('Portfolio Exposure Analysis')
 st.image(f'fig4_{selected_portfolio}.png', use_container_width=True)
+st.image(f'fig5_{selected_portfolio}.png', use_container_width=True)
 
+st.subheader('Individual Asset Analysis - Top & Bottom Performers')
+st.image(f'fig6_{selected_portfolio}.png', use_container_width=True)
+st.image(f'fig7_{selected_portfolio}.png', use_container_width=True)
 
