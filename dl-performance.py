@@ -7,7 +7,7 @@ st.set_page_config(page_title='Portfolio', page_icon=':bar_chart:')
 st.header('Portfolio Performance')
 
 # Display the last update date
-st.markdown('##### Updated: 07/11/2025')
+st.markdown('##### Updated: 21/11/2025')
 
 portfolios = ["AlvaroSleeve", "TAA1"]
 
@@ -24,9 +24,10 @@ st.subheader('Portfolio Exposure Analysis')
 st.image(f'fig4_{selected_portfolio}.png', use_container_width=True)
 st.image(f'fig5_{selected_portfolio}.png', use_container_width=True)
 
-st.subheader('Individual Asset Analysis - Top & Bottom Performers')
+st.subheader('Individual Asset Analysis')
 st.image(f'fig6_{selected_portfolio}.png', use_container_width=True)
 st.image(f'fig7_{selected_portfolio}.png', use_container_width=True)
+
 
 
 
